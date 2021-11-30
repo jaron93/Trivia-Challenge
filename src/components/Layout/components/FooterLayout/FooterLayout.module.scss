@@ -1,0 +1,14 @@
+@import '../../../../styles/variables.scss';
+
+.element {
+   max-width: 450px;
+   width: 100%;
+
+   margin: 0 auto;
+   margin-bottom: 20px;
+   padding: 0 26px;
+
+   @include min(sm) {
+      padding: 0;
+   }
+}

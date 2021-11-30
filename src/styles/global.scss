@@ -1,0 +1,19 @@
+@import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;900&display=swap');
+
+// Reset Style
+*{
+   margin: 0;
+   padding: 0;
+   outline: 0; 
+   border: 0;
+   box-sizing: border-box;
+   font-family: 'Quicksand', sans-serif;
+   font-style: normal;
+   font-weight: 500;
+}
+
+*:focus {
+   outline: 0;
+}
+

@@ -1,0 +1,7 @@
+@import '../../../../styles/variables.scss';
+
+.element {
+   @include d-flex;
+   @include d-flex-column;
+   @include d-flex-center;
+}

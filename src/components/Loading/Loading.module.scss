@@ -1,0 +1,11 @@
+.container {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+
+   span {
+      font-size: 40px;
+      color: rgb(40, 64, 172);
+   }
+}

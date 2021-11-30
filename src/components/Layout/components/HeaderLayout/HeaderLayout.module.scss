@@ -1,0 +1,9 @@
+@import '../../../../styles/variables.scss';
+
+
+header {
+   @include d-flex;
+   @include d-flex-column;
+   @include d-flex-center;
+   margin-top: 50px;
+   }

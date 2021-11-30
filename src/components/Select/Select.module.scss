@@ -1,0 +1,87 @@
+@import '../../styles//variables.scss';
+
+.container {
+   position: relative;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   width: 100%;
+
+   .header{
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      height: 54px;
+      border: 1px solid #FFFFFF;
+      border-radius: 10px;
+      background-color: transparent;
+      padding: 0.4em 2em 0.4em 1em;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+      font-weight: 500;
+      font-size: 18px;
+      color: #ffffff;
+      
+
+      /* Prevent from select */
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      -webkit-user-select: none;
+
+      /* Arrow Icon */
+      &::before {
+         content: "";
+         position: absolute;
+         width: 54px;
+         height: 54px;
+         top: 0;
+         right: 10px;
+         background: url('../../assets/Icons/arrowDown_icon.svg') no-repeat;
+         background-position: center;
+      }
+
+      cursor: pointer;
+         &.isOpen {
+            &::before {
+               transform: rotate(-180deg);
+            }
+            
+         }
+
+      }
+
+   }
+
+   .listContainer {
+      position: absolute;
+      bottom: -10px;
+      width: 100%;
+      transform: translateY(100%);
+      z-index: 100;
+
+      ul {
+         width: 100%;
+         background: #ffffff;
+         border: 2px solid #e5e5e5;
+         border-radius: 10px;
+         color: rgb(37, 67, 87);
+         font-size: 1.3rem;
+         font-weight: 700;
+         background-color: white;
+         &:first-child {
+           padding-top: 0.8em;
+         }
+
+         li {
+            padding-left: 1em;
+            width: 100%;
+            list-style: none;
+            margin-bottom: 0.8em;
+            cursor: pointer;
+            &:hover {
+               color: #fd9e46;
+            }
+         }
+      }
+
+}
+

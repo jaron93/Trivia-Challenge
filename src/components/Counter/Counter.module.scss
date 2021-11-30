@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.numbers {
+   display: flex;
+   align-items: flex-end;
+
+
+   .current {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 20px;
+      color: $color-pink;
+
+      @include min(md) {
+         font-size: 28px;
+      }
+
+   }
+   .container {
+      display: flex;
+      .total, .separator {
+         color: $color-blue;
+         font-size: 12px;
+         line-height: 15px;
+         @include min(md) {
+            font-size: 21px;
+         }
+      }
+   }
+}
+
+
+
+
+
