@@ -43,6 +43,9 @@ export const gameSlice = createSlice({
    reducers: {
       setResult: (state, { payload }: PayloadAction<any>) => {
          state.result = payload
+      },
+      clearGameState: () => {
+         return initialState
       }
    },
    extraReducers: (builder) => {
@@ -65,4 +68,4 @@ export const gameSlice = createSlice({
 
 export default gameSlice.reducer;
 
-export const { setResult } = gameSlice.actions;
+export const { setResult, clearGameState } = gameSlice.actions;

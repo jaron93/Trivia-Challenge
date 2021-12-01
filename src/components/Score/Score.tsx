@@ -4,7 +4,6 @@ import styles from './Score.module.scss'
 import avatar_icon from '../../assets/Icons/avatar_icon.svg'
 import { Counter } from '..'
 
-
 type Props = {
    current: number;
    total: number;
@@ -43,16 +42,22 @@ function Score({ current, total }: Props) {
    return (
       <>
          <div className={styles.score}>
+            <img
+               className={styles.avatar}
+               src={avatar_icon}
+               alt="Avatar"
+            />
 
-            <img className={styles.avatar} src={avatar_icon} alt="Avatar"></img>
-            <span className={styles.title}>You scored</span>
+            <span className={styles.title}>
+               You scored
+            </span>
+
             <Counter
                current={current}
                total={total}
                separatorStyle={{ color: 'white' }}
                totalStyle={{ color: 'white' }}
             />
-
          </div>
 
          <div className={styles.stars}>

@@ -16,14 +16,18 @@ import {
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { IResult } from '../../types/types';
+import { clearGameState, fetchQuestions } from '../../store/slices/game';
 
 
 
 function ResultScreen() {
 
+   const navigate = useNavigate();
+   const dispatch = useDispatch()
 
    const { result } = useSelector(state => state.game)
    const [isMobile, setIsMobile] = useState(false)
+   const { difficulty, amount } = useSelector(state => state.preferences)
 
    const handleResize = () => {
       (window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false))
@@ -35,6 +39,12 @@ function ResultScreen() {
    })
 
    const checkPoints = result.filter((a: { point: boolean }) => (a.point === true)).length
+
+   const handleOnClick = () => {
+      dispatch(clearGameState())
+      dispatch(fetchQuestions({ difficulty, amount }))
+      navigate('/game')
+   }
 
    return (
       <>
@@ -74,6 +84,7 @@ function ResultScreen() {
                <FooterLayout>
                   <Button
                      variant="primary"
+                     onClick={handleOnClick}
                   >
                      Play Again
                   </Button>
