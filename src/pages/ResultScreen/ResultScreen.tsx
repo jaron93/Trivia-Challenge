@@ -9,11 +9,13 @@ import {
    Layout,
    MainLayout,
    Score,
+   QuestionContainer
 } from '../../components'
 
 //  Redux
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { IResult } from '../../types/types';
 
 
 
@@ -58,10 +60,16 @@ function ResultScreen() {
                   />
                </HeaderLayout>
 
-               <MainLayout>
 
+               <div className={styles.mainContainer}>
+                  {result.map((result: IResult, index) =>
+                     <QuestionContainer
+                        key={index}
+                        result={result}
+                     />
+                  )}
+               </div>
 
-               </MainLayout>
 
                <FooterLayout>
                   <Button

@@ -44,7 +44,7 @@ function Score({ current, total }: Props) {
       <>
          <div className={styles.score}>
 
-            <img src={avatar_icon} alt="Avatar"></img>
+            <img className={styles.avatar} src={avatar_icon} alt="Avatar"></img>
             <span className={styles.title}>You scored</span>
             <Counter
                current={current}

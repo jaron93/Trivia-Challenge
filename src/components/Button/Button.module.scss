@@ -12,7 +12,7 @@ button {
 
 }
 
-span {
+.text {
    display: flex;
    justify-content: center;
    color: #fff;
@@ -26,7 +26,7 @@ span {
    }
 }
 
-img {
+.icon {
    width: 30px;
    height: auto;
 }
@@ -49,7 +49,7 @@ img {
       bottom: 0;
    }
    
-   span {
+   .text {
       transform: translateX(0);
       transition: all .35s ease-Out;
    }
@@ -60,7 +60,7 @@ img {
          transform: translateX(0);
       }
 
-      span {
+      .text {
          transform: translateX(100%);
       }
 
@@ -78,7 +78,7 @@ img {
    background-color: #fff;
    border: 2px solid $color-blue;
 
-   span {
+   .text {
       color: $color-blue;
    }
 }

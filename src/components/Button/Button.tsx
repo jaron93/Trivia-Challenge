@@ -22,9 +22,9 @@ const Button: React.FC<ButtonProps> = ({
       <button className={classNames(styles[`${variant}`])} disabled={loading} {...rest}>
          {icon &&
             <div className={styles.icon}>
-               <img src={icon} alt="" />
+               <img className={styles.icon} src={icon} alt="" />
             </div>}
-         <span>{loading ? <h3>Loading</h3> : children}</span>
+         <span className={styles.text}>{loading ? <h3>Loading</h3> : children}</span>
       </button>
    )
 }

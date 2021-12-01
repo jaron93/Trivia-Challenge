@@ -1,4 +1,5 @@
 import Button from './Button/Button'
+import Counter from './Counter/Counter'
 import FormInput from './FormInput/FormInput'
 import Select from './Select/Select'
 import Layout from './Layout/Layout'
@@ -9,7 +10,8 @@ import FooterLayout from './Layout/components/FooterLayout/FooterLayout'
 import ProgressBar from './ProgressBar/ProgressBar'
 import FormContainer from './Containers/FormContainer/FormContainer'
 import Score from './Score/Score'
-import Counter from './Counter/Counter'
+import QuestionContainer from './Containers/QuestionContainer/QuestionContainer'
+
 
 export {
    Button,
@@ -23,5 +25,6 @@ export {
    FooterLayout,
    ProgressBar,
    FormContainer,
-   Score
+   Score,
+   QuestionContainer
 }

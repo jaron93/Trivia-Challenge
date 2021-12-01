@@ -19,3 +19,8 @@ export interface IProgressBar {
    current: number,
    total: number
 }
+
+export interface IResult {
+   question: string,
+   point: boolean
+}
