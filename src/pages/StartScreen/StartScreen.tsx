@@ -37,22 +37,19 @@ function StartScreen() {
 
    const { difficulty, amount } = useSelector(state => state.preferences)
 
-
-
    // Handle Play game button
    const handleOnClick = () => {
       if ((difficulty && amount) === null) return alert
       if (amount <= 0) return alert
       navigate('/game')
       dispatch(fetchQuestions({ difficulty, amount }))
-
    }
-
 
    // Handle Amount input
-   const handleOnChange = (e: React.FormEvent<HTMLInputElement>) => {
-      dispatch(setAmount(e.currentTarget.value))
+   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(setAmount(parseFloat(e.target.value)))
    }
+
    return (
       <>
          <div className={styles.wrapper}>
@@ -72,21 +69,18 @@ function StartScreen() {
                <MainLayout>
 
                   <FormContainer icon={difficulty_icon} title="Difficulty">
-
                      <Select
                         options={options}
-                        select={setDifficulty}
+                        onSelect={setDifficulty}
                      />
-
                   </FormContainer>
-                  <FormContainer icon={amount_icon} title="Amount">
 
+                  <FormContainer icon={amount_icon} title="Amount">
                      <FormInput
                         name="amount"
-                        type="number"
+                        type="text"
                         onChange={handleOnChange}
                      />
-
                   </FormContainer>
 
 

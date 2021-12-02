@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
 
    return (
-      <button className={classNames(styles[`${variant}`])} disabled={loading} {...rest}>
+      <button className={classNames(styles.button, styles[`${variant}`])} disabled={loading} {...rest}>
          {icon &&
             <div className={styles.icon}>
                <img className={styles.icon} src={icon} alt="" />

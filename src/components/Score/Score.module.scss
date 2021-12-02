@@ -1,12 +1,13 @@
+@import '../../styles/variables.scss';
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap');
 
 .score {
-   display: flex;
-   align-items: center;
+   @include d-flex-v-center;
+   
    margin-bottom: 20px;
    
    .avatar {
-      background-color: #fff;
+      background-color: $color-white;
       border-radius: 50%;
       width: 32px;
       height: 32px;
@@ -16,13 +17,13 @@
       font-family: Comfortaa;
       font-weight: 500;
       font-size: 18px;
-      color: #fff;
+      color: $color-white;
       margin-right: 10px;     
    }
 }
 .stars {
-   display: flex;
-   align-items: center; 
+   @include d-flex-v-center;
+
    svg {
       margin: 0 2px;
    }

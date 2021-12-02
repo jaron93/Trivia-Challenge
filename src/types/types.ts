@@ -10,7 +10,7 @@ export interface IfetchQuestions {
 
 export interface IGameState {
    questions: [],
-   result: [],
+   result: IResult[],
    status: "idle" | "loading" | "succeeded" | "failed",
    error: string | null,
 }
@@ -24,3 +24,4 @@ export interface IResult {
    question: string,
    point: boolean
 }
+

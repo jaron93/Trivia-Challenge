@@ -2,8 +2,6 @@
 
 
 header {
-   @include d-flex;
-   @include d-flex-column;
-   @include d-flex-center;
-   margin-top: 50px;
+   position: relative;
+   @include d-flex-column-center
    }

@@ -2,11 +2,10 @@
 
 .element {
 
-   @include d-flex;
    @include d-flex-column;
-   justify-content: space-between;
-   width: 100%;
-   height: 100%;
+   @include fluid;
+   @include d-flex-between;
+   
    max-height: 750px;
    padding: 4px;
 

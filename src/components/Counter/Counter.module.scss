@@ -4,7 +4,6 @@
    display: flex;
    align-items: flex-end;
 
-
    .current {
       font-weight: 700;
       font-size: 20px;
@@ -17,7 +16,9 @@
 
    }
    .container {
+
       display: flex;
+      
       .total, .separator {
          color: $color-blue;
          font-size: 12px;

@@ -5,20 +5,26 @@ import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
 
-function Select({ options, select, placeholder }: any) {
+type Props = {
+   options: string[],
+   onSelect: (value: string) => void,
+   placeholder?: string
+}
+
+function Select({ options, onSelect, placeholder }: Props) {
 
    const dispatch = useDispatch()
    const ref = useRef(null);
 
    const [isOpen, setIsOpen] = useState(false);
 
-   const [selectedOption, setSelectedOption] = useState(false);
+   const [selectedOption, setSelectedOption] = useState("");
 
    const toggling = () => setIsOpen(!isOpen);
 
-   const onOptionClicked = (value: any) => () => {
+   const onOptionClicked = (value: string) => () => {
       setSelectedOption(value);
-      dispatch(select(value));
+      dispatch(onSelect(value));
       setIsOpen(false);
    };
 
@@ -33,7 +39,7 @@ function Select({ options, select, placeholder }: any) {
             <div className={styles.listContainer}>
                <ul>
                   {options ?
-                     options.map((option: any) => (
+                     options.map((option: string) => (
                         <li onClick={onOptionClicked(option)} key={Math.random()}>
                            {option}
                         </li>

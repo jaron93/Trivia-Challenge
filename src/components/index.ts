@@ -1,4 +1,5 @@
 import Button from './Button/Button'
+import CloseButton from './CloseButton/CloseButton'
 import Counter from './Counter/Counter'
 import FormInput from './FormInput/FormInput'
 import Select from './Select/Select'
@@ -15,6 +16,7 @@ import QuestionContainer from './Containers/QuestionContainer/QuestionContainer'
 
 export {
    Button,
+   CloseButton,
    Counter,
    FormInput,
    Select,

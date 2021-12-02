@@ -69,7 +69,7 @@
    font-size: 26px;
    line-height: 32px;
    text-align: center;
-   color: #fff;
+   color: $color-white;
 
    @include min(sm) {
       font-size: 36px;

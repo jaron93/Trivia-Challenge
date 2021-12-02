@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+
 import api from '../../utils/Api';
-import { IfetchQuestions, IGameState } from '../../types/types'
+
+import { IfetchQuestions, IGameState, IResult } from '../../types/types'
 
 
 export const fetchQuestions = createAsyncThunk(
@@ -28,7 +30,6 @@ export const fetchQuestions = createAsyncThunk(
       }
    });
 
-
 export const initialState: IGameState = {
    questions: [],
    result: [],
@@ -36,12 +37,11 @@ export const initialState: IGameState = {
    error: null,
 };
 
-
 export const gameSlice = createSlice({
    name: 'game',
    initialState,
    reducers: {
-      setResult: (state, { payload }: PayloadAction<any>) => {
+      setResult: (state, { payload }: PayloadAction<IResult[]>) => {
          state.result = payload
       },
       clearGameState: () => {
@@ -57,6 +57,7 @@ export const gameSlice = createSlice({
             state.status = "succeeded";
             state.error = null;
             state.questions = payload
+
          })
          .addCase(fetchQuestions.rejected, (state) => {
             state.status = "failed";

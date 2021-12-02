@@ -4,6 +4,7 @@ $input-title: #f7a491;
 $color-blue: #4953be;
 $color-blue-2: #464FAC;
 $color-pink: #FF7878;
+$color-white: #fff;
 
 
 
@@ -13,7 +14,15 @@ $color-pink: #FF7878;
     display: flex;
 }
 
+@mixin d-flex-column-center {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
 @mixin d-flex-column {
+    display: flex;
     flex-direction: column;
 }
 
@@ -23,10 +32,12 @@ $color-pink: #FF7878;
 }
 
 @mixin d-flex-v-center {
+    display: flex;
     align-items: center;
 }
 
 @mixin d-flex-h-center {
+    display: flex;
     justify-content: center;
 }
 

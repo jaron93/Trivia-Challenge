@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router';
 import styles from './GameScreen.module.scss'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setResult } from '../../store/slices/game';
+import { clearGameState, setResult } from '../../store/slices/game';
 
 // Components
 import {
+   CloseButton,
    Button,
    FooterLayout,
    HeaderLayout,
@@ -15,6 +16,7 @@ import {
    MainLayout,
    ProgressBar
 } from '../../components'
+import { clearPreferencesState } from '../../store/slices/preferences';
 
 function GameScreen() {
 
@@ -47,13 +49,19 @@ function GameScreen() {
       }
    };
 
+   const handleOnClickClose = () => {
+      dispatch(clearGameState())
+      dispatch(clearPreferencesState())
+      navigate('/')
+   }
+
 
    /* Prevent for activate this route without choosing the game options. */
    useEffect(() => {
       if ((difficulty && amount) === null) navigate('/')
    }, [amount, navigate, difficulty])
 
-   const [isMobile, setIsMobile] = useState(false)
+   const [isMobile, setIsMobile] = useState(true)
 
    const handleResize = () => {
       (window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false))
@@ -86,6 +94,7 @@ function GameScreen() {
                <>
                   {questions[currentQuestion] &&
                      <>
+
                         <HeaderLayout>
 
                            <div className={styles.headerContainer}>
@@ -94,13 +103,19 @@ function GameScreen() {
                                  {questions[currentQuestion].category}
                               </span>
 
-                              <span className={styles.level}>level 1</span>
+                              <span className={styles.level}>level: {difficulty}</span>
+
                            </div>
 
                            <ProgressBar
                               //Array Index start from 0 
                               current={currentQuestion + 1}
                               total={questions.length}
+                           />
+
+                           <CloseButton
+                              onClick={handleOnClickClose}
+                              variant="secondary"
                            />
 
                         </HeaderLayout>

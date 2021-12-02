@@ -1,0 +1,28 @@
+@import '../../styles/variables.scss';
+
+.element {
+   position: absolute;
+   top: 0;
+   right: 0;
+   border: 0;
+   background-color: transparent;
+   padding: 0 26px;
+
+   @include min(md) {
+      padding: 0;
+   }
+
+   .closeSVG {
+      transition: 0.3s ease-in-out;
+      fill: $color-white;
+
+      &.secondary {
+         fill: $color-blue;
+      }
+
+      &:hover {
+         fill: $color-pink;
+         transform: scale(1.2);
+      }
+   }
+}

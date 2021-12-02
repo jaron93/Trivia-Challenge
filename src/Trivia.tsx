@@ -13,14 +13,7 @@ function Trivia() {
          <Route path="/" element={<StartScreen />} />
          <Route path="/game" element={<GameScreen />} />
          <Route path="/result" element={<ResultScreen />} />
-         <Route
-            path="*"
-            element={
-               <main style={{ padding: "1rem" }}>
-                  <p>There's nothing here!</p>
-               </main>
-            }
-         />
+         <Route path="*" element={<StartScreen />} />
       </Routes>
 
    );
