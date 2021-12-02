@@ -4,9 +4,11 @@ import styles from './Select.module.scss'
 import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
+import { IOptions } from '../../types/types';
+
 
 type Props = {
-   options: string[],
+   options: IOptions[],
    onSelect: (value: string) => void,
    placeholder?: string,
    error?: boolean
@@ -46,9 +48,12 @@ function Select({ options, onSelect, placeholder, error }: Props) {
             <div className={styles.listContainer}>
                <ul>
                   {options ?
-                     options.map((option: string) => (
-                        <li onClick={onOptionClicked(option)} key={Math.random()}>
-                           {option}
+                     options.map((o: IOptions) => (
+                        <li onClick={onOptionClicked(o.option)} key={Math.random()}>
+                           {o.option}
+                           <div className={styles.icon}>
+                              {o.icon}
+                           </div>
                         </li>
                      )) :
                      <li>Provide Options</li>

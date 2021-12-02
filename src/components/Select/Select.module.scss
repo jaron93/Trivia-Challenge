@@ -72,11 +72,17 @@
          }
 
          li {
-            padding-left: 1em;
+            @include d-flex-v-center;
+            justify-content: space-between;
+            padding: 0 1em;
             width: 100%;
             list-style: none;
             margin-bottom: 0.8em;
             cursor: pointer;
+
+            .icon {
+               @include d-flex-v-center;
+            }
             &:hover {
                color: #fd9e46;
             }

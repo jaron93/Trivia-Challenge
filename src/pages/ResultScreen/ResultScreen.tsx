@@ -20,6 +20,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { clearGameState, fetchQuestions } from '../../store/slices/game';
 import { clearPreferencesState } from '../../store/slices/preferences';
+import useWindowDimensions from '../../hooks/useWindowDimension';
 
 
 function ResultScreen() {
@@ -27,26 +28,15 @@ function ResultScreen() {
    const navigate = useNavigate();
    const dispatch = useDispatch()
 
+   const { width } = useWindowDimensions();
    const { result } = useSelector(state => state.game)
    const { difficulty, amount } = useSelector(state => state.preferences)
-
-
 
    /* Prevent for activate this route without choosing the game options. */
    useEffect(() => {
       if ((difficulty && amount) === null) navigate('/')
    }, [amount, navigate, difficulty])
 
-   const [isMobile, setIsMobile] = useState(true)
-
-   const handleResize = () => {
-      (window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false))
-   }
-
-   useEffect(() => {
-      window.addEventListener("resize", handleResize)
-      return () => window.removeEventListener("resize", handleResize);
-   })
 
    const checkPoints = result.filter((a: { point: boolean }) => (a.point === true)).length
 
@@ -68,7 +58,7 @@ function ResultScreen() {
 
             <img className={styles.top_left} alt="" />
             <img className={styles.top_right} alt="" />
-            {isMobile &&
+            {(width < 768) &&
                <>
                   <img className={styles.mid_right} alt="" />
                   <img className={styles.mid2_right} alt="" />

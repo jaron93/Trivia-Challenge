@@ -25,3 +25,8 @@ export interface IResult {
    point: boolean
 }
 
+export interface IOptions {
+   option: string,
+   icon: React.SVGProps<SVGSVGElement>
+}
+

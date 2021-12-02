@@ -17,12 +17,14 @@ import {
    ProgressBar
 } from '../../components'
 import { clearPreferencesState } from '../../store/slices/preferences';
+import useWindowDimensions from '../../hooks/useWindowDimension';
 
 function GameScreen() {
 
    const navigate = useNavigate();
    const dispatch = useDispatch()
 
+   const { width } = useWindowDimensions();
    const { difficulty, amount } = useSelector(state => state.preferences)
    const { questions, status, result }: any = useSelector(state => state.game)
 
@@ -61,16 +63,7 @@ function GameScreen() {
       if ((difficulty && amount) === null) navigate('/')
    }, [amount, navigate, difficulty])
 
-   const [isMobile, setIsMobile] = useState(true)
 
-   const handleResize = () => {
-      (window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false))
-   }
-
-   useEffect(() => {
-      window.addEventListener("resize", handleResize)
-      return () => window.removeEventListener("resize", handleResize);
-   })
 
    /* This way I got around the api decoding problem
    I could change the api encoding to e.g. Base64 and decode later, but this way is more transparent */
@@ -81,7 +74,7 @@ function GameScreen() {
 
          <img className={styles.top_left} alt="" />
          <img className={styles.top_right} alt="" />
-         {isMobile &&
+         {(width < 768) &&
             <img className={styles.mid_right} alt="" />
          }
          <img className={styles.bottom_left} alt="" />

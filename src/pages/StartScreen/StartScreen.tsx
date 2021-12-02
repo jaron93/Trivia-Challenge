@@ -10,6 +10,8 @@ import difficulty_icon from '../../assets/Icons/difficulty_icon.svg'
 import amount_icon from '../../assets/Icons/amount_icon.svg'
 import play_icon from '../../assets/Icons/play_icon.svg'
 
+import { ReactComponent as Star } from '../../assets/Icons/star.svg'
+
 // Components
 import {
    Button,
@@ -28,7 +30,20 @@ import { useNavigate } from 'react-router-dom';
 import { fetchQuestions } from '../../store/slices/game'
 
 // Options for Select component
-const options = ["hard", "medium", "easy"]
+const options = [
+   {
+      option: "hard",
+      icon: <><Star /><Star /><Star /></>
+   },
+   {
+      option: "medium",
+      icon: <><Star /><Star /></>
+   },
+   {
+      option: "easy",
+      icon: <Star />
+   }
+]
 
 function StartScreen() {
 
