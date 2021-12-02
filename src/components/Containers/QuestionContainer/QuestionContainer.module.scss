@@ -4,7 +4,6 @@
    @include d-flex;
    justify-content: space-between;
    align-items: center;
-
    width: 100%;
    min-height: 65px;
    background-color: #FFFBFA;
@@ -23,7 +22,6 @@
 
    .question {
       color: $color-blue;
-      text-transform: none;
       font-size: 12px;
 
       @include min(sm) {
@@ -34,6 +32,6 @@
    .icon {
       height: 15px;
       width: auto;
-      margin-left: 6px;
+      margin-left: 8px;
    }
 }

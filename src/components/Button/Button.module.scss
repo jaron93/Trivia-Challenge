@@ -7,7 +7,6 @@
    overflow: hidden;
    margin: 15px 0;
    padding: 20px 0;
-   cursor: pointer;
    border-radius: 14px;
 }
 
@@ -25,42 +24,33 @@
    }
 }
 
-.icon {
-   width: 30px;
-   height: auto;
-}
-
 .primary {
    border-bottom: 6px solid rgb(198, 82, 82);
-   transition: all .35s ease-Out;
    background: linear-gradient(90deg, rgb(255, 166, 122) 0%, rgb(255, 96, 101) 100%);
-
+   
    .icon {
+      @include d-flex-v-center;
       @include fluid;
-      
-      background: rgba(255, 255, 255, 0.11);
-      transform: translateX(-100%);
       position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all .35s ease-Out;
       bottom: 0;
+      
+      transform: translateX(-100%);
+      transition: all .35s ease-in-out;
    }
    
    .text {
       transform: translateX(0);
-      transition: all .35s ease-Out;
+      transition: all .55s ease-Out;
    }
 
    &:hover {
 
       .icon {
-         transform: translateX(0);
+         transform: translateX(20%);
       }
 
       .text {
-         transform: translateX(100%);
+         transform: translateX(10%);
       }
 
    }

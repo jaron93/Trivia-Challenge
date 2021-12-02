@@ -86,9 +86,8 @@
       font-weight: bold;
       font-size: 30px;
       color: $color-blue;
-      padding: 0 5%;
       text-align: center;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.05rem;
       margin-bottom: 10px;
       @include min(sm) {
          font-size: 40px;
@@ -98,7 +97,7 @@
       font-size: 13px;
       color: $color-blue;
       text-align: center;
-      letter-spacing: 0.5em;
+      letter-spacing: 0.4rem;
       text-transform: lowercase;
       @include min(md) {
          font-size: 18px;
@@ -114,14 +113,13 @@
       text-align: center;
    }
    
-
    .question {
       color: $color-blue;
       font-size: 25px;
       text-transform: none;
 
       @include min(sm) {
-         font-size: 31px;
+         font-size: 25px;
       }
    
    }

@@ -2,10 +2,13 @@ import React, { useRef, useState } from 'react'
 import styles from './Select.module.scss'
 
 import classNames from 'classnames';
+import transition from '../../styles/transition.module.scss'
+import { CSSTransition } from 'react-transition-group';
+
 import { useDispatch } from 'react-redux';
-import useOnClickOutside from '../../hooks/useOnClickOutside';
 import { IOptions } from '../../types/types';
 
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 type Props = {
    options: IOptions[],
@@ -18,6 +21,7 @@ function Select({ options, onSelect, placeholder, error }: Props) {
 
    const dispatch = useDispatch()
    const ref = useRef(null);
+   const nodeRef = React.useRef(null)
 
    const [isOpen, setIsOpen] = useState(false);
 
@@ -44,8 +48,16 @@ function Select({ options, onSelect, placeholder, error }: Props) {
             onClick={toggling}>
             {selectedOption || (placeholder ? placeholder : "Select...")}
          </div>
-         {isOpen && (
-            <div className={styles.listContainer}>
+
+
+         <CSSTransition
+            in={isOpen}
+            timeout={300}
+            classNames={transition}
+            unmountOnExit
+            nodeRef={nodeRef}
+         >
+            <div className={styles.listContainer} ref={nodeRef}>
                <ul>
                   {options ?
                      options.map((o: IOptions) => (
@@ -60,7 +72,10 @@ function Select({ options, onSelect, placeholder, error }: Props) {
                   }
                </ul>
             </div>
-         )}
+         </CSSTransition>
+
+
+
       </div>
    )
 }

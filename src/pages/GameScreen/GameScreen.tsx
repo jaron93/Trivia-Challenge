@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import styles from './GameScreen.module.scss'
 
+// Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { clearGameState, setResult } from '../../store/slices/game';
+import { clearPreferencesState } from '../../store/slices/preferences';
 
 // Components
 import {
@@ -16,7 +18,8 @@ import {
    MainLayout,
    ProgressBar
 } from '../../components'
-import { clearPreferencesState } from '../../store/slices/preferences';
+
+// Hooks
 import useWindowDimensions from '../../hooks/useWindowDimension';
 
 function GameScreen() {
@@ -62,7 +65,6 @@ function GameScreen() {
    useEffect(() => {
       if ((difficulty && amount) === null) navigate('/')
    }, [amount, navigate, difficulty])
-
 
 
    /* This way I got around the api decoding problem

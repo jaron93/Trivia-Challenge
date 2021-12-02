@@ -8,7 +8,8 @@ import FormContainer from '../../components/Containers/FormContainer/FormContain
 import logo from '../../assets/logo.svg'
 import difficulty_icon from '../../assets/Icons/difficulty_icon.svg'
 import amount_icon from '../../assets/Icons/amount_icon.svg'
-import play_icon from '../../assets/Icons/play_icon.svg'
+
+import { ReactComponent as PlayIcon } from '../../assets/Icons/play_icon.svg'
 
 import { ReactComponent as Star } from '../../assets/Icons/star.svg'
 
@@ -57,7 +58,7 @@ function StartScreen() {
 
    // Handle Amount input
    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(setAmount(parseFloat(e.currentTarget.value)))
+      dispatch(setAmount(parseFloat(e.currentTarget.value.replace(/-/, ''))))
    }
 
    // Handle Play game button
@@ -113,7 +114,7 @@ function StartScreen() {
                <FooterLayout>
                   <Button
                      variant="primary"
-                     icon={play_icon}
+                     icon={<PlayIcon />}
                      onClick={handleOnClick}
                   >
                      Play Game
