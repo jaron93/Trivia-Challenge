@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './StartScreen.module.scss'
 
 //  Containers
@@ -37,17 +37,23 @@ function StartScreen() {
 
    const { difficulty, amount } = useSelector(state => state.preferences)
 
-   // Handle Play game button
-   const handleOnClick = () => {
-      if ((difficulty && amount) === null) return alert
-      if (amount <= 0) return alert
-      navigate('/game')
-      dispatch(fetchQuestions({ difficulty, amount }))
-   }
+   const [isInputError, setIsInputError] = useState(false);
+   const [isSelectError, setIsSelectError] = useState(false);
 
    // Handle Amount input
    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(setAmount(parseFloat(e.target.value)))
+      dispatch(setAmount(parseFloat(e.currentTarget.value)))
+   }
+
+   // Handle Play game button
+   const handleOnClick = () => {
+      (amount === 0) && setIsInputError(true);
+      (difficulty === null) && setIsSelectError(true);
+
+      if (amount === 0 || difficulty === null) return
+
+      navigate('/game')
+      dispatch(fetchQuestions({ difficulty, amount }))
    }
 
    return (
@@ -72,14 +78,17 @@ function StartScreen() {
                      <Select
                         options={options}
                         onSelect={setDifficulty}
+                        error={isSelectError}
                      />
                   </FormContainer>
 
                   <FormContainer icon={amount_icon} title="Amount">
                      <FormInput
                         name="amount"
-                        type="text"
+                        type="number"
                         onChange={handleOnChange}
+                        autoComplete="off"
+                        error={isInputError}
                      />
                   </FormContainer>
 
@@ -98,8 +107,6 @@ function StartScreen() {
 
             </Layout>
          </div>
-
-
       </>
    )
 }

@@ -8,10 +8,11 @@ import useOnClickOutside from '../../hooks/useOnClickOutside';
 type Props = {
    options: string[],
    onSelect: (value: string) => void,
-   placeholder?: string
+   placeholder?: string,
+   error?: boolean
 }
 
-function Select({ options, onSelect, placeholder }: Props) {
+function Select({ options, onSelect, placeholder, error }: Props) {
 
    const dispatch = useDispatch()
    const ref = useRef(null);
@@ -32,7 +33,13 @@ function Select({ options, onSelect, placeholder }: Props) {
 
    return (
       <div className={styles.container} ref={ref}>
-         <div className={classNames(styles.header, isOpen && styles.isOpen)} onClick={toggling}>
+         <div
+            className={classNames(
+               styles.header,
+               isOpen && styles.isOpen,
+               error && styles.isError
+            )}
+            onClick={toggling}>
             {selectedOption || (placeholder ? placeholder : "Select...")}
          </div>
          {isOpen && (

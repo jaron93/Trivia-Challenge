@@ -19,6 +19,10 @@
       font-weight: 500;
       font-size: 18px;
       color: $color-white;
+
+      &.isError {
+         border: 1px solid $color-pink;
+      }
       
 
       /* Prevent from select */
