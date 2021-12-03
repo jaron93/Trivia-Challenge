@@ -1,20 +1,20 @@
 import React from 'react'
 import styles from './FormContainer.module.scss'
 
-type FormContainerProps = {
+type Props = {
+   children: React.ReactNode,
    title: string,
-   icon: string,
-   children: any | null;
+   icon: React.SVGProps<SVGSVGElement>
 }
 
-function FormContainer({ title, icon, children }: FormContainerProps) {
+function FormContainer({ title, icon, children }: Props) {
 
    return (
       <div className={styles.element}>
 
          <div className={styles.title}>
-            <img src={icon} alt="Icon" />
-            <span>{title}</span>
+            {icon}
+            <span className={styles.title}>{title}</span>
          </div>
 
          {children}

@@ -17,7 +17,7 @@
       @include d-flex; 
       @include d-flex-v-center;
 
-      img {
+      svg {
          margin-right: 15px;
          width: 24px;
          height: auto;
@@ -30,7 +30,7 @@
          }
       }
       
-      span {
+      .title {
          color: $input-title;
          font-size: 13px;
          font-weight: 700;

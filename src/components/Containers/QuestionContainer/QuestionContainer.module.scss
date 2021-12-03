@@ -1,9 +1,8 @@
 @import '../../../styles/variables.scss';
 
 .element {
-   @include d-flex;
+   @include d-flex-v-center;
    justify-content: space-between;
-   align-items: center;
    width: 100%;
    min-height: 65px;
    background-color: #FFFBFA;

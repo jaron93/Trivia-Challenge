@@ -4,14 +4,12 @@ import styles from './StartScreen.module.scss'
 //  Containers
 import FormContainer from '../../components/Containers/FormContainer/FormContainer'
 
-// SVG's *
+// SVG's 
 import logo from '../../assets/logo.svg'
-import difficulty_icon from '../../assets/Icons/difficulty_icon.svg'
-import amount_icon from '../../assets/Icons/amount_icon.svg'
-
+import { ReactComponent as DifficultyIcon } from '../../assets/Icons/difficulty_icon.svg'
+import { ReactComponent as AmountIcon } from '../../assets/Icons/amount_icon.svg'
 import { ReactComponent as PlayIcon } from '../../assets/Icons/play_icon.svg'
-
-import { ReactComponent as Star } from '../../assets/Icons/star.svg'
+import { ReactComponent as StarIcon } from '../../assets/Icons/star.svg'
 
 // Components
 import {
@@ -34,15 +32,15 @@ import { fetchQuestions } from '../../store/slices/game'
 const options = [
    {
       option: "hard",
-      icon: <><Star /><Star /><Star /></>
+      icon: <><StarIcon /><StarIcon /><StarIcon /></>
    },
    {
       option: "medium",
-      icon: <><Star /><Star /></>
+      icon: <><StarIcon /><StarIcon /></>
    },
    {
       option: "easy",
-      icon: <Star />
+      icon: <StarIcon />
    }
 ]
 
@@ -90,7 +88,7 @@ function StartScreen() {
 
                <MainLayout>
 
-                  <FormContainer icon={difficulty_icon} title="Difficulty">
+                  <FormContainer icon={<DifficultyIcon />} title="Difficulty">
                      <Select
                         options={options}
                         onSelect={setDifficulty}
@@ -98,7 +96,7 @@ function StartScreen() {
                      />
                   </FormContainer>
 
-                  <FormContainer icon={amount_icon} title="Amount">
+                  <FormContainer icon={<AmountIcon />} title="Amount">
                      <FormInput
                         name="amount"
                         type="number"
