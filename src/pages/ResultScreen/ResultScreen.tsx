@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
+
+// Styles, Animation
 import styles from './ResultScreen.module.scss'
 
 // Types
@@ -12,7 +14,8 @@ import {
    HeaderLayout,
    Layout,
    Score,
-   QuestionContainer
+   QuestionContainer,
+   AnimatedPage
 } from '../../components'
 
 //  Redux
@@ -20,6 +23,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { clearGameState, fetchQuestions } from '../../store/slices/game';
 import { clearPreferencesState } from '../../store/slices/preferences';
+
+// Hooks
 import useWindowDimensions from '../../hooks/useWindowDimension';
 
 
@@ -53,7 +58,8 @@ function ResultScreen() {
    }
 
    return (
-      <>
+      <AnimatedPage>
+
          <div className={styles.wrapper}>
 
             <img className={styles.top_left} alt="" />
@@ -81,15 +87,16 @@ function ResultScreen() {
                </HeaderLayout>
 
 
-               <div className={styles.mainContainer}>
+               <main className={styles.mainContainer}>
+
                   {result.map((result: IResult, index) =>
                      <QuestionContainer
-                        key={index}
                         result={result}
+                        key={index}
                      />
                   )}
-               </div>
 
+               </main>
 
                <FooterLayout>
                   <Button
@@ -101,10 +108,9 @@ function ResultScreen() {
                </FooterLayout>
 
             </Layout>
-         </div>
+         </div >
 
-
-      </>
+      </AnimatedPage>
    )
 }
 

@@ -2,16 +2,16 @@
 
 .wrapper {
    width: 100%;
-   padding: 0 26px;
-   max-width: 450px;
-   margin-top: 50px;
+   padding: 0 2.6em;
+   max-width: 45em;
+   margin-top: 5em;
    
    .container {
-      height: 5px;
+      height: 0.5em;
       width: 100%;
-      background-color: #DBDEFF;
-      border-radius: 20px;
-      margin-top: 10px;
+      background-color: $bg-progressBar;
+      border-radius: 2em;
+      margin-top: 1em;
 
       .filler {
          height: 100%;

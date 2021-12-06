@@ -4,10 +4,10 @@
    @include d-flex; 
    @include d-flex-column;
    
-   max-width: 450px;
+   max-width: 45em;
    width: 100%;
 
-   padding: 0 26px;
+   padding: 0 2.6em;
 
    @include min(sm) {
       padding: 0;
@@ -18,25 +18,25 @@
       @include d-flex-v-center;
 
       svg {
-         margin-right: 15px;
-         width: 24px;
+         margin-right: 1.5em;
+         width: 2.4em;
          height: auto;
 
          @include min(sm) {
-            width: 30px;
+            width: 3em;
          }
          @include min(md) {
-            width: 35px;
+            width: 3.5em;
          }
       }
       
       .title {
          color: $input-title;
-         font-size: 13px;
+         font-size: 1.3em;
          font-weight: 700;
 
          @include min(sm) {
-            font-size: 15px;
+            font-size: 1.5em;
          }
       }
    }

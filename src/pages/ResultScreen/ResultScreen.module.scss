@@ -1,30 +1,28 @@
 @import '../../styles/variables.scss';
 
 header {
-   margin-top: 50px
+   margin-top: 5em;
 }
 
 .wrapper {
    position: absolute;
-   width: 100%;
-   height: 100%;
-   min-height: 700px;
+   min-height: 70em;
 
    background-color: $bg-primary;
 
-   @include d-flex;
+   @include fluid;
    @include d-flex-center;
 
    .top_left {
       content: url('../../assets/shapes/ResultScreen/top_left_sm.svg');
       position: absolute;
       left: 0;
-      top: 60px;
-      width: 80px; 
+      top: 6em;
+      width: 8em; 
 
       @include min(md) {
          content: url('../../assets/shapes/ResultScreen/top_left.svg');
-         width: 70px;
+         width: 7em;
          top: 0;
       }
    }
@@ -33,16 +31,16 @@ header {
       content: url('../../assets/shapes/ResultScreen/mid_right_sm.svg');
       position: absolute;
       right: 0;
-      top: 130px;  
-      width: 80px;
+      top: 13em;  
+      width: 8em;
    }
 
    .mid2_right {
       content: url('../../assets/shapes/ResultScreen/mid2_right_sm.svg');
       position: absolute;
       right: 0;
-      bottom: 50px;  
-      width: 100px;
+      bottom: 5em;  
+      width: 10em;
    }
 
    .top_right {
@@ -50,11 +48,11 @@ header {
       position: absolute;
       top: 0;
       right: 0;
-      width: 60px;
+      width: 6em;
 
       @include min(md) {
          content: url('../../assets/shapes/ResultScreen/top_right.svg');
-         width: 80px;
+         width: 8em;
          top: 10%;
       }
    }
@@ -64,12 +62,12 @@ header {
       position: absolute;
       bottom: 25%;
       left: -5%;
-      width: 120px;
+      width: 12em;
 
 
       @include min(md) {
          content: url('../../assets/shapes/ResultScreen/bottom_left.svg');
-         width: 120px;
+         width: 12em;
          bottom: 0;
          left: 0;
       }
@@ -80,23 +78,21 @@ header {
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 60px;
+      width: 6em;
 
       @include min(md) {
          content: url('../../assets/shapes/ResultScreen/bottom_right.svg');
-         width: 60px;
+         width: 6em;
       }
    }
    .mainContainer {
-      @include d-flex;
       @include d-flex-column;
-      justify-items: center;
-      margin: 15px auto;
-      justify-content: flex-start;
-      height: 100%;
-      width: 100%;
-      max-width: 620px;
-      padding: 26px;
+      @include fluid;
+      
+
+      margin: 1.5em auto;
+      max-width: 62em;
+      padding: 2.6em;
       z-index: 100;
       overflow-y: auto;
       -ms-overflow-style: none;  
@@ -108,11 +104,10 @@ header {
       }
 
       /* scroll bar width, for use in mask calculations */
-      --scrollbar-width: 8px;
+      --scrollbar-width: 0.8em;
 
       /* mask fade distance, for use in mask calculations */
-      --mask-height: 30px;
-       
+      --mask-height: 3em;
 
       /* The CSS mask */
 

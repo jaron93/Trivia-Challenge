@@ -4,33 +4,33 @@
    @include d-flex-v-center;
    justify-content: space-between;
    width: 100%;
-   min-height: 65px;
-   background-color: #FFFBFA;
-   border-radius: 14px;
-   margin: 10px 0;
-   padding: 0 16px;
+   min-height: 6.5em;
+   background-color: $bg-question-true;
+   border-radius: 1.4em;
+   margin: 1em 0;
+   padding: 0 1.6em;
    &.isFalse {
-      background-color: #FFDBDB;
+      background-color: $bg-question-false;
    }
 
    @include min(sm) {
-      min-height: 72px;
-      padding: 0 30px;
+      min-height: 7.2em;
+      padding: 0 3em;
    }
 
 
    .question {
       color: $color-blue;
-      font-size: 12px;
+      font-size: 1.2rem;
 
       @include min(sm) {
-         font-size: 16px;
+         font-size: 1.6rem;
       }
    }
 
    .icon {
-      height: 15px;
+      height: 1.5em;
       width: auto;
-      margin-left: 8px;
+      margin-left: 0.8em;
    }
 }

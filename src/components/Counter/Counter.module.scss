@@ -6,12 +6,12 @@
 
    .current {
       font-weight: 700;
-      font-size: 20px;
-      line-height: 20px;
+      font-size: 2em;
+      line-height: 2rem;
       color: $color-pink;
 
       @include min(md) {
-         font-size: 28px;
+         font-size: 2.8em;
       }
 
    }
@@ -21,10 +21,10 @@
       
       .total, .separator {
          color: $color-blue;
-         font-size: 12px;
-         line-height: 15px;
+         font-size: 1.2em;
+         line-height: 1.5rem;
          @include min(md) {
-            font-size: 21px;
+            font-size: 2.1em;
          }
       }
    }

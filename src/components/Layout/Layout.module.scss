@@ -3,14 +3,14 @@
 .element {
 
    @include d-flex-column;
-   @include fluid;
    @include d-flex-between;
+   @include fluid;
    
-   max-height: 750px;
-   padding: 4px;
+   max-height: 75em;
+   padding: 0.4em;
 
    @include min(sm) {
-      max-width: 700px;
+      max-width: 70em;
       padding: 0;
    }
 

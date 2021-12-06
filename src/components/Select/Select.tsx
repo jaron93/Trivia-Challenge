@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import styles from './Select.module.scss'
 
 import classNames from 'classnames';
-import transition from '../../styles/transition.module.scss'
+import fade from '../../styles/fade.module.scss'
 import { CSSTransition } from 'react-transition-group';
 
 import { useDispatch } from 'react-redux';
@@ -53,7 +53,7 @@ function Select({ options, onSelect, placeholder, error }: Props) {
          <CSSTransition
             in={isOpen}
             timeout={300}
-            classNames={transition}
+            classNames={fade}
             unmountOnExit
             nodeRef={nodeRef}
          >

@@ -2,26 +2,26 @@
 
 .container {
    position: relative;
-   margin-top: 10px;
-   margin-bottom: 20px;
+   margin-top: 1em;
+   margin-bottom: 2em;
    width: 100%;
 
    .header{
       position: relative;
       @include d-flex-v-center;
 
-      height: 54px;
-      border: 1px solid $color-white;
-      border-radius: 10px;
+      height: 5.4rem;
+      border: 0.1rem solid $color-white;
+      border-radius: 1rem;
       background-color: transparent;
       padding: 0.4em 2em 0.4em 1em;
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
       font-weight: 500;
-      font-size: 18px;
+      font-size: 1.8em;
       color: $color-white;
 
       &.isError {
-         border: 1px solid $color-pink;
+         border: 0.1rem solid $color-pink;
       }
       
 
@@ -34,10 +34,10 @@
       &::before {
          content: "";
          position: absolute;
-         width: 54px;
-         height: 54px;
+         width: 5.4rem;
+         height: 5.4rem;
          top: 0;
-         right: 10px;
+         right: 1rem;
          background: url('../../assets/Icons/arrowDown_icon.svg') no-repeat;
          background-position: center;
       }
@@ -53,7 +53,7 @@
 
    .listContainer {
       position: absolute;
-      bottom: -10px;
+      bottom: -1em;
       width: 100%;
       transform: translateY(100%);
       z-index: 100;
@@ -61,10 +61,10 @@
       ul {
          width: 100%;
          background: $color-white;
-         border: 2px solid #e5e5e5;
-         border-radius: 10px;
+         border: 0.2rem solid #e5e5e5;
+         border-radius: 1rem;
          color: rgb(37, 67, 87);
-         font-size: 1.3rem;
+         font-size: 2em;
          font-weight: 700;
          background-color: $color-white;
          &:first-child {

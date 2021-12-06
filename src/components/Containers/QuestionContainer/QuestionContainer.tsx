@@ -14,14 +14,14 @@ type Props = {
    result: IResult
 }
 
-function QuestionContainer({ result }: Props) {
+const QuestionContainer = React.forwardRef<HTMLDivElement, Props>(({ result }, ref) => {
 
    /* Avoid decoding problem */
    const renderHTML = (rawHTML: string) => React.createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML }, className: `${styles.question}` });
 
    return (
 
-      <div className={classNames(styles.element, !result.point && styles.isFalse)}>
+      <div className={classNames(styles.element, !result.point && styles.isFalse)} ref={ref}>
 
          <span className={styles.question}>
             {renderHTML(result.question)}
@@ -35,7 +35,7 @@ function QuestionContainer({ result }: Props) {
 
       </div>
 
-   )
-}
+   );
+})
 
 export default QuestionContainer

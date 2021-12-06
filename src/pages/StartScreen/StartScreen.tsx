@@ -19,7 +19,8 @@ import {
    FormInput,
    Layout,
    MainLayout,
-   Select
+   Select,
+   AnimatedPage
 } from '../../components'
 
 //  Redux
@@ -71,7 +72,8 @@ function StartScreen() {
    }
 
    return (
-      <>
+      <AnimatedPage>
+
          <div className={styles.wrapper}>
 
             <img className={styles.top_left} alt="" />
@@ -121,7 +123,8 @@ function StartScreen() {
 
             </Layout>
          </div>
-      </>
+
+      </AnimatedPage>
    )
 }
 

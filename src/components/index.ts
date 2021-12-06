@@ -1,3 +1,4 @@
+import AnimatedPage from './AnimatedPage/AnimatedPage'
 import Button from './Button/Button'
 import CloseButton from './CloseButton/CloseButton'
 import Counter from './Counter/Counter'
@@ -15,6 +16,7 @@ import QuestionContainer from './Containers/QuestionContainer/QuestionContainer'
 
 
 export {
+   AnimatedPage,
    Button,
    CloseButton,
    Counter,

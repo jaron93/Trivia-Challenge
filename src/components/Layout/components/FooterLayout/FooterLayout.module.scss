@@ -1,12 +1,12 @@
 @import '../../../../styles/variables.scss';
 
 .element {
-   max-width: 450px;
+   max-width: 45em;
    width: 100%;
 
    margin: 0 auto;
-   margin-bottom: 20px;
-   padding: 0 26px;
+   margin-bottom: 2em;
+   padding: 0 2.6em;
 
    @include min(sm) {
       padding: 0;

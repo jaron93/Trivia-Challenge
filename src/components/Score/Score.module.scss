@@ -3,29 +3,38 @@
 
 .score {
    @include d-flex-v-center;
-   
-   margin-bottom: 20px;
+   margin-bottom: 2em;
    
    .avatar {
       background-color: $color-white;
       border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      margin-right: 10px;
+      width: 3.2em;
+      height: 3.2em;
+      margin-right: 1em;
    }
+
    .title {
       font-family: Comfortaa;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 1.8em;
       color: $color-white;
-      margin-right: 10px;     
+      margin-right: 1rem; 
+      
+      @include min(md) {
+         font-size: 2.2em;
+      }
    }
 }
 .stars {
    @include d-flex-v-center;
 
    svg {
-      margin: 0 2px;
+      margin: 0 0.2em;
+
+      @include min(md) {
+         width: 3.5em;
+         height: auto;
+      }
    }
 
 }

@@ -2,26 +2,26 @@
 
 .container {
    position: relative;
-   margin-top: 10px;
-   margin-bottom: 20px;
+   margin-top: 1em;
+   margin-bottom: 2em;
    width: 100%;
 
 
    .input {
       width: 100%;
-      height: 54px;
-      padding: 0 20px;
+      height: 5.4rem;
+      padding: 0 2rem;
       font-weight: 500;
-      font-size: 18px;
+      font-size: 1.8em;
       color: $color-white;
-      border: 1px solid $color-white;
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-      border-radius: 10px;
+      border: 0.1rem solid $color-white;
+      box-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.15);
+      border-radius: 1rem;
       background-color: transparent;
       appearance: none;
 
       &.isError {
-         border: 1px solid $color-pink;
+         border: 0.1rem solid $color-pink;
       }
    }
 }

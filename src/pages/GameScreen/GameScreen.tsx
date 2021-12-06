@@ -16,11 +16,13 @@ import {
    Layout,
    Loading,
    MainLayout,
-   ProgressBar
+   ProgressBar,
+   AnimatedPage
 } from '../../components'
 
 // Hooks
 import useWindowDimensions from '../../hooks/useWindowDimension';
+
 
 function GameScreen() {
 
@@ -72,75 +74,80 @@ function GameScreen() {
    const renderHTML = (rawHTML: string) => React.createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML }, className: `${styles.question}` });
 
    return (
-      <div className={styles.wrapper}>
 
-         <img className={styles.top_left} alt="" />
-         <img className={styles.top_right} alt="" />
-         {(width < 768) &&
-            <img className={styles.mid_right} alt="" />
-         }
-         <img className={styles.bottom_left} alt="" />
-         <img className={styles.bottom_right} alt="" />
+      <AnimatedPage>
 
-         <Layout>
-            {status === "loading" ?
-               <Loading />
-               :
-               <>
-                  {questions[currentQuestion] &&
-                     <>
+         <div className={styles.wrapper}>
 
-                        <HeaderLayout>
-
-                           <div className={styles.headerContainer}>
-
-                              <span className={styles.category}>
-                                 {questions[currentQuestion].category}
-                              </span>
-
-                              <span className={styles.level}>level: {difficulty}</span>
-
-                           </div>
-
-                           <ProgressBar
-                              //Array Index start from 0 
-                              current={currentQuestion + 1}
-                              total={questions.length}
-                           />
-
-                           <CloseButton
-                              onClick={handleOnClickClose}
-                              variant="secondary"
-                           />
-
-                        </HeaderLayout>
-
-                        <MainLayout>
-                           <div className={styles.mainContainer}>
-                              {renderHTML(questions[currentQuestion].question)}
-                           </div>
-                        </MainLayout>
-
-                        <FooterLayout>
-                           <Button
-                              variant="secondary"
-                              onClick={() => handleAnswerOptionClick(true)}
-                           >
-                              True
-                           </Button>
-                           <Button
-                              variant="third"
-                              onClick={() => handleAnswerOptionClick(false)}
-                           >
-                              False
-                           </Button>
-                        </FooterLayout>
-                     </>
-                  }
-               </>
+            <img className={styles.top_left} alt="" />
+            <img className={styles.top_right} alt="" />
+            {(width < 768) &&
+               <img className={styles.mid_right} alt="" />
             }
-         </Layout>
-      </div>
+            <img className={styles.bottom_left} alt="" />
+            <img className={styles.bottom_right} alt="" />
+
+            <Layout>
+               {status === "loading" ?
+                  <Loading />
+                  :
+                  <>
+                     {questions[currentQuestion] &&
+                        <>
+
+                           <HeaderLayout>
+
+                              <div className={styles.headerContainer}>
+
+                                 <span className={styles.category}>
+                                    {questions[currentQuestion].category}
+                                 </span>
+
+                                 <span className={styles.level}>level: {difficulty}</span>
+
+                              </div>
+
+                              <ProgressBar
+                                 //Array Index start from 0 
+                                 current={currentQuestion + 1}
+                                 total={questions.length}
+                              />
+
+                              <CloseButton
+                                 onClick={handleOnClickClose}
+                                 variant="secondary"
+                              />
+
+                           </HeaderLayout>
+
+                           <MainLayout>
+                              <div className={styles.mainContainer}>
+                                 {renderHTML(questions[currentQuestion].question)}
+                              </div>
+                           </MainLayout>
+
+                           <FooterLayout>
+                              <Button
+                                 variant="secondary"
+                                 onClick={() => handleAnswerOptionClick(true)}
+                              >
+                                 True
+                              </Button>
+                              <Button
+                                 variant="third"
+                                 onClick={() => handleAnswerOptionClick(false)}
+                              >
+                                 False
+                              </Button>
+                           </FooterLayout>
+                        </>
+                     }
+                  </>
+               }
+            </Layout>
+         </div>
+
+      </AnimatedPage>
    )
 }
 
