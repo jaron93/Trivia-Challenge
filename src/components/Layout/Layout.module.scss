@@ -5,8 +5,7 @@
    @include d-flex-column;
    @include d-flex-between;
    @include fluid;
-   
-   max-height: 75em;
+   max-height: 74em;
    padding: 0.4em;
 
    @include min(sm) {

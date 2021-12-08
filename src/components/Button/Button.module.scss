@@ -5,62 +5,60 @@
    background-color: coral;
    width: 100%;
    overflow: hidden;
-   margin: 15px 0;
-   padding: 20px 0;
-   border-radius: 14px;
+   margin: 1.5rem 0;
+   padding: 2rem 0;
+   border-radius: 1.4rem;
+   transition-property: transform, box-shadow;
+   transition-duration: .4s;
+   
+   &:active {
+      font-size: 1rem;
+      transform: scale(.95);
+      box-shadow: 0 3px 15px -2px;
+   }
+
+   @media (hover: hover) and (pointer: fine) {
+     &:hover {
+        .text {
+           color: $color-pink;
+        }
+      } 
+   }
+
 }
 
 .text {
-   display: flex;
+   display: block;
    justify-content: center;
    color: $color-white;
-   font-size: 15px;
+   font-size: 1.5rem;
    font-style: normal;
    font-weight: 700;
    font-weight: bold;
    text-transform: uppercase;
    @include min(md) {
-      font-size: 21px;
+      font-size: 2.1rem;
    }
 }
 
 .primary {
-   border-bottom: 6px solid rgb(198, 82, 82);
+   border-bottom: 0.6rem solid rgb(198, 82, 82);
    background: linear-gradient(90deg, rgb(255, 166, 122) 0%, rgb(255, 96, 101) 100%);
-   
-   .icon {
-      @include d-flex-v-center;
-      @include fluid;
-      position: absolute;
-      bottom: 0;
-      
-      transform: translateX(-100%);
-      transition: all .35s ease-in-out;
-   }
-   
-   .text {
-      transform: translateX(0);
-      transition: all .55s ease-Out;
-   }
 
-   &:hover {
-
-      .icon {
-         transform: translateX(20%);
-      }
-
-      .text {
-         transform: translateX(10%);
-      }
-
-   }
-
-
+   @media (hover: hover) and (pointer: fine) {
+      &:hover {
+         .text {
+            color: rgb(224, 224, 224);
+            transform: scale(1.15);
+         }
+       } 
+    }
 }
 
 .secondary {
    background: $color-blue;
-   border-bottom: 6px solid #424a9e;
+   border-bottom: 0.6rem solid #424a9e;
+
 }
 
 .third {
@@ -71,3 +69,4 @@
       color: $color-blue;
    }
 }
+

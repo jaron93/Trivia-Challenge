@@ -8,7 +8,6 @@ import FormContainer from '../../components/Containers/FormContainer/FormContain
 import logo from '../../assets/logo.svg'
 import { ReactComponent as DifficultyIcon } from '../../assets/Icons/difficulty_icon.svg'
 import { ReactComponent as AmountIcon } from '../../assets/Icons/amount_icon.svg'
-import { ReactComponent as PlayIcon } from '../../assets/Icons/play_icon.svg'
 import { ReactComponent as StarIcon } from '../../assets/Icons/star.svg'
 
 // Components
@@ -114,7 +113,6 @@ function StartScreen() {
                <FooterLayout>
                   <Button
                      variant="primary"
-                     icon={<PlayIcon />}
                      onClick={handleOnClick}
                   >
                      Play Game

@@ -1,36 +1,35 @@
 @import '../../../styles/variables.scss';
 
 .element {
-   @include d-flex-v-center;
-   justify-content: space-between;
    width: 100%;
-   min-height: 6.5em;
    background-color: $bg-question-true;
    border-radius: 1.4em;
    margin: 1em 0;
-   padding: 0 1.6em;
    &.isFalse {
       background-color: $bg-question-false;
    }
 
-   @include min(sm) {
-      min-height: 7.2em;
-      padding: 0 3em;
-   }
-
-
-   .question {
-      color: $color-blue;
-      font-size: 1.2rem;
-
-      @include min(sm) {
-         font-size: 1.6rem;
+   .wrapper {
+      @include d-flex-v-center;
+      min-height: 6.5em;
+      justify-content: space-between;
+      padding: 1em 2em;
+      @include min(md) {
+         min-height: 7.9em;
       }
-   }
 
-   .icon {
-      height: 1.5em;
-      width: auto;
-      margin-left: 0.8em;
+      .question {
+         color: $color-blue;
+         font-size: 1.2rem;
+         @include min(md) {
+            font-size: 1.6rem;
+         }
+      }
+   
+      .icon {
+         height: 1.5em;
+         width: auto;
+         margin-left: 0.8em;
+      }
    }
 }

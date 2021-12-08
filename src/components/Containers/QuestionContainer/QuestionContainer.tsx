@@ -22,17 +22,19 @@ const QuestionContainer = React.forwardRef<HTMLDivElement, Props>(({ result }, r
    return (
 
       <div className={classNames(styles.element, !result.point && styles.isFalse)} ref={ref}>
+         <div className={styles.wrapper}>
 
-         <span className={styles.question}>
-            {renderHTML(result.question)}
-         </span>
+            <span className={styles.question}>
+               {renderHTML(result.question)}
+            </span>
 
-         {result.point ?
-            <img className={styles.icon} src={checkMark_icon} alt="" />
-            :
-            <img className={styles.icon} src={crossMark_icon} alt="" />
-         }
+            {result.point ?
+               <img className={styles.icon} src={checkMark_icon} alt="" />
+               :
+               <img className={styles.icon} src={crossMark_icon} alt="" />
+            }
 
+         </div>
       </div>
 
    );
