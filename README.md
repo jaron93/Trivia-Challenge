@@ -64,7 +64,7 @@
    
 3. **Result Screen:**
   - Score information:
-    - There are always 10 stars (If the number of questions is less than or greater than 10, the score is held as a percentage of the total.) 
+    - There are always 10 stars (If the number of questions is less or greater than 10, the score is held as a percentage of the total.) 
   - Result Question:
     - a list of questions in the order of the story with the score 
     - added scrolling generated questions with mask on edges.
