@@ -12,7 +12,7 @@
 
   <p align="center">
     <br />
-    <a href="https://github.com/jaron93/Trivia-Challenge">View Demo</a>
+    <a href="https://trivia-challenge-game.herokuapp.com">View Demo</a>
     ·
     <a href="https://github.com/jaron93/Trivia-Challenge/issues">Report Bug</a>
     ·
