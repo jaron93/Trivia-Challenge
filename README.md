@@ -11,10 +11,6 @@
 <h3 align="center">Trivia Challenge Game</h3>
 
   <p align="center">
-    Trivia Challenge Game
-    <br />
-    <a href="https://github.com/jaron93/Trivia-Challenge"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://github.com/jaron93/Trivia-Challenge">View Demo</a>
     ·
