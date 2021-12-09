@@ -21,6 +21,7 @@ export interface IProgressBar {
 }
 
 export interface IResult {
+   id: number;
    question: string,
    point: boolean
 }

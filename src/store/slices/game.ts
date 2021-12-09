@@ -42,7 +42,16 @@ export const gameSlice = createSlice({
    initialState,
    reducers: {
       setResult: (state, { payload }: PayloadAction<IResult[]>) => {
-         state.result = payload
+
+         /* Prevent duplicate responses when clicking the answer button very quickly. */
+         const seen = new Set();
+         const filteredArr = payload.filter(el => {
+            const duplicate = seen.has(el.id);
+            seen.add(el.id);
+            return !duplicate;
+         });
+
+         state.result = filteredArr
       },
       clearGameState: () => {
          return initialState

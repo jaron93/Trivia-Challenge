@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { clearGameState } from './store/slices/game';
 import { clearPreferencesState } from './store/slices/preferences';
 
+
 import StartScreen from './pages/StartScreen/StartScreen';
 import GameScreen from './pages/GameScreen/GameScreen';
 import ResultScreen from './pages/ResultScreen/ResultScreen';

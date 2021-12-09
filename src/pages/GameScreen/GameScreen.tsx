@@ -43,6 +43,7 @@ function GameScreen() {
 
       /* Create Array with new object contains only question and if answer is correct */
       dispatch(setResult([...result, {
+         id: currentQuestion,
          question: questions[currentQuestion].question,
          point: checkIfAnswerIsCorrect
       }]))
