@@ -44,12 +44,16 @@
 .primary {
    border-bottom: 0.6rem solid rgb(198, 82, 82);
    background: linear-gradient(90deg, rgb(255, 166, 122) 0%, rgb(255, 96, 101) 100%);
-
+    .text {
+      transition: 0.2s ease-out;
+      transform: scale(1)
+    }
    @media (hover: hover) and (pointer: fine) {
       &:hover {
          .text {
+            transition: 0.2s ease-out;
             color: rgb(224, 224, 224);
-            transform: scale(1.15);
+            transform: scale(1.2);
          }
        } 
     }

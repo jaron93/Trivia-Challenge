@@ -75,10 +75,10 @@ function StartScreen() {
 
          <div className={styles.wrapper}>
 
-            <img className={styles.top_left} alt="" />
-            <img className={styles.top_right} alt="" />
-            <img className={styles.bottom_left} alt="" />
-            <img className={styles.bottom_right} alt="" />
+            <img className={styles.top_left} alt="DecoShape" />
+            <img className={styles.top_right} alt="DecoShape" />
+            <img className={styles.bottom_left} alt="DecoShape" />
+            <img className={styles.bottom_right} alt="DecoShape" />
 
             <Layout>
 
